@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import *
 from time import time, strftime, sleep
 from gpiozero import LED
 
