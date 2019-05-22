@@ -1,5 +1,5 @@
 from flask import Flask
-import datetime
+from time import time, strftime, sleep
 from gpiozero import LED
 
 red = LED(17)
@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    now = datetime.date.now()
-    timeString = now.strftime("%Y-%m-%d %H:%M")
+    now = time()
+    now = strftime("%Y-%m-%d %H:%M")
     templateData = {
       'title' : 'HELLO!',
-      'time': timeString
+      'time': now
       }
     return render_template('index.html', **templateData)
 
