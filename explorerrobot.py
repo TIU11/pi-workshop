@@ -1,29 +1,45 @@
 import explorerhat
 from time import sleep
-from guizero import App, PushButton
+from guizero import App, PushButton, Text
 
-def forwards():
+def backwards():
     explorerhat.motor.one.forward(100)
     explorerhat.motor.two.backward(100)
     sleep(1)
     explorerhat.motor.one.stop()
     explorerhat.motor.two.stop()
     
-def backwards():
+def forwards():
     explorerhat.motor.two.forward(100)
     explorerhat.motor.one.backward(100)
     sleep(1)
     explorerhat.motor.one.stop()
     explorerhat.motor.two.stop()
- 
-def turn():
-    explorerhat.motor.one.forward(100)
+    
+def turns_right():
     explorerhat.motor.two.backward(100)
+    sleep(1)
+    explorerhat.motor.two.stop()
+
+
+def turns_left():
+    explorerhat.motor.one.forward(100)
+    sleep(1)
+    explorerhat.motor.one.stop()
+
+    
+def stops():
+    explorerhat.motor.one.stop()
+    explorerhat.motor.two.stop()
 
 app = App("Robot controller")
 
+
 drive = PushButton(app, forwards, text="Forwards")
 reverse = PushButton(app, backwards, text="Backwards")
-turns = PushButton(app, turn(), text="Turn")
+right = PushButton(app, turns_right, text="Right Turn")
+left = PushButton(app, turns_left, text="Left Turn")
+stop = PushButton(app, stops, text="Stop")
+
 
 app.display
