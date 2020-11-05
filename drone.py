@@ -1,7 +1,7 @@
 from pyparrot.Minidrone import Mambo
 import sys
 # Change this to the address of the mambo
-mamboAddr = "D0:3A:4B:91:E6:24"
+mamboAddr = ""
 # Set True/False for the wifi depending on if you are using the wifi or the BLE to
 
 mambo = Mambo(mamboAddr, use_wifi=False)
