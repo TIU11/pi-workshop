@@ -17,7 +17,7 @@ try:
      print("taking off!")
      mambo.safe_takeoff(5)
      print("turning")
-     mambo.turn_degree(90)
+     mambo.turn_degrees(90)
      print("landing")
      mambo.safe_land(5)
      mambo.smart_sleep(5)
