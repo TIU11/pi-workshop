@@ -1,8 +1,17 @@
 # Python Modules Cheat Sheet
 
-Quick reference for third-party Python modules used in projects. For full project walk-throughs, including connecting things to your Raspberry Pi, visit http://stem.tiu11.org.
+Quick reference for third-party Python modules used in projects. For full project walk-throughs, including connecting things to your Raspberry Pi, visit https://stem.tiu11.org.
 
-###### Install First
+Contents
+* [Raspberry Pi GPIO Pins](#raspberry-pi-gpio-pins)
+* [guizero](#guizero)
+* [Automation HAT](#automation-hat)
+* [Temperature Probe](#temperature-probe)
+* [Sense HAT](#sense-hat)
+* [Pi Camera](#pi-camera)
+* [(Internet) Requests](#internet-requests)
+
+**Need to Install First**
 
 Since these Python modules aren't part of the Python Standard Library, they have to be installed. The linked docs will have instructions for Rasberry Pi, which runs on Raspbian. Look for `sudo apt-get update` and `sudo apt-get install`.
 
@@ -39,6 +48,28 @@ relay = OutputDevice(24)
 relay.on()
 sleep(1)
 relay.off()
+```
+
+## guizero
+
+> guizero is a Python 3 library for creating simple GUIs.
+>
+> It is designed to allow new learners to quickly and easily create GUIs for their programs.
+>
+> https://lawsie.github.io/guizero/
+
+```python
+from guizero import App, Text, PushButton
+from gpiozero import LED
+
+red = LED(12)
+app = App(title="GUI with LED Controls")
+
+label = Text(app, text="Red")
+on_button = PushButton(app, command=red.on, text="on")
+off_button = PushButton(app, command=red.off, text="off")
+
+app.display()
 ```
 
 ## Automation HAT

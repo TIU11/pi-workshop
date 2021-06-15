@@ -7,4 +7,4 @@
 
 * https://www.circuito.io
 * [Python Cheat Sheet](python_cheat_sheet.md)
-* [Third-Party Modules Cheat Sheet](python_modules_cheat_sheet.md)
+* [Python (Third-Party) Modules Cheat Sheet](python_modules_cheat_sheet.md)
