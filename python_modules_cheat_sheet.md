@@ -196,13 +196,17 @@ camera.stop_preview()
 
 Make HTTP requests on the internet.
 
-> http://docs.python-requests.org/en/master/user/quickstart/
+> https://docs.python-requests.org/en/master/user/quickstart/
 
-[HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) requests are how web browsers communicate on the internet. You make a request to a server, another computer on the internet, and it responds.
-* Requests and responses are often called "messages".
-* The main parts of a request are: a url, a method, headers, and sometimes a body.
-  * Each type of request is called a "method" or "verb". We'll cover two common HTTP methods, `GET` and `POST`.
-  * [HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) are like settings. Most of the time, we're happy with the defaults, so just be aware of them.
+[HTTP messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages) are how web browsers communicate on the internet. You make a **request** to a server (or a computer) and it sends a **response** back.
+* The main parts of a **request** are: a url, a method, headers, and sometimes a body.
+  * `url` - the address a request will go to.
+  * `method` - the "verb" or type of request. We'll cover `GET` and `POST` requests.
+  * `body` - (optional) data like a form or a file
+  * [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) are like settings. Most of the time, we're happy with the defaults, so just be aware of them.
+* The main parts of a response:
+  * actually, it looks a lot like a request, so...all those parts :smile:
+  * [status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - a code in the response to your request to let you know if it was successfully completed (e.g. `200 OK`).
 
 ### POST
 
@@ -239,7 +243,7 @@ sleep(1) # wait for it!
 print(joke_data['punchline'])
 ```
 
-Advanced: Download an image and save it to a file. Uses the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Image_types) from the response headers, telling us the type of content in the response, to add the right extension to the filename.
+**Advanced Example:** Download an image and save it to a file. Uses the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Image_types) from the response headers, telling us the type of content in the response, to add the right extension to the filename.
 
 ```python
 import requests
