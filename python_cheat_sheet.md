@@ -1,6 +1,6 @@
 # Python Language Cheat Sheet
 
-Covers Python 3.5, the version that comes with the Rasbian OS.
+Expects Python 3.5 or higher. Raspberry Pi OS now comes with Python 3.7 (as it is based on Debian Buster).
 
 We link to relevant [Python Docs](https://docs.python.org/3.5/) for more detail:
 * [The Python Tutorial](https://docs.python.org/3.5/tutorial/) Introduces Python's most noteworthy features. After reading it, you will be able to read and write Python modules and programs. (start here)

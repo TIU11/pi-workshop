@@ -13,13 +13,22 @@ Contents
 
 **Need to Install First**
 
-Since these Python modules aren't part of the Python Standard Library, they have to be installed. The linked docs will have instructions for Rasberry Pi, which runs on Raspbian. Look for `sudo apt-get update` and `sudo apt-get install`.
+Since these Python modules aren't part of the Python Standard Library, they have to be installed. The linked docs will have instructions for Raspberry Pi OS. Look for `sudo apt-get update` and `sudo apt-get install` or sometimes `sudo pip3 install`.
 
 ## Raspberry Pi GPIO Pins
 
 > A simple interface to GPIO devices with Raspberry Pi.
 >
 > https://gpiozero.readthedocs.io
+
+(gpiozero is installed by default)
+
+The [recipes](https://gpiozero.readthedocs.io/en/stable/recipes.html) are a great place to start:
+[LED](https://gpiozero.readthedocs.io/en/stable/recipes.html?highlight=motor#led),
+[Button](https://gpiozero.readthedocs.io/en/stable/recipes.html?highlight=motor#button),
+[Reaction Game](https://gpiozero.readthedocs.io/en/stable/recipes.html?highlight=motor#reaction-game),
+[Motion sensor](https://gpiozero.readthedocs.io/en/stable/recipes.html?highlight=motor#motion-sensor),
+[Motors](https://gpiozero.readthedocs.io/en/stable/recipes.html?highlight=motor#motors), etc. The [pin numbering](https://gpiozero.readthedocs.io/en/stable/recipes.html#pin-numbering) diagram is helpful if you don't have one in your kit.
 
 ```python
 from gpiozero import Button, LED, OutputDevice
@@ -58,6 +67,8 @@ relay.off()
 >
 > https://lawsie.github.io/guizero/
 
+After [installing](https://lawsie.github.io/guizero/#raspberry-pi), check out their [Recipes](https://lawsie.github.io/guizero/recipes/) for examples to try out. Try this example to make a [PushButton](https://lawsie.github.io/guizero/pushbutton/) run [commands](https://lawsie.github.io/guizero/commands/) that turn an LED on and off.
+
 ```python
 from guizero import App, Text, PushButton
 from gpiozero import LED
@@ -71,6 +82,10 @@ off_button = PushButton(app, command=red.off, text="off")
 
 app.display()
 ```
+
+Get fancy with [sizes](https://lawsie.github.io/guizero/size/), [colors](https://lawsie.github.io/guizero/colors/) and [images](https://lawsie.github.io/guizero/images/).
+
+As your GUI grows, it might get cluttered. Look into [Layouts](https://lawsie.github.io/guizero/layout/) for ways to organize things, like a [grid](https://lawsie.github.io/guizero/layout/#grid-layout) and (Boxes)[https://lawsie.github.io/guizero/layout/#boxes].
 
 ## Automation HAT
 
@@ -100,6 +115,10 @@ automationhat.output.one.off() # ...and off
 > Get the temperature from a w1 therm compatible sensor.
 >
 > https://github.com/timofurrer/w1thermsensor
+
+Setup
+* `sudo pip3 install w1thermsensor` (see [installation](https://github.com/timofurrer/w1thermsensor#installation))
+* Go to Raspberry Pi preferences > Interface. Enable 1-wire. Reboot.
 
 ```python
 from w1thermsensor import W1ThermSensor
@@ -207,8 +226,8 @@ Make HTTP requests on the internet.
 * The main parts of a **response**:
   * actually, it looks a lot like a request, so...all those parts :smile:
   * [status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - a code in the response to your request to let you know if it was successfully completed.
-    - `200 OK` the request succeeded
-    - `404 Not Found` the server can't find that. Do you have a typo in the `url`?
+    - `200 OK` - the request succeeded
+    - `404 Not Found` - the server can't find that. Do you have a typo in the `url`?
 
 ### POST
 
@@ -245,7 +264,7 @@ sleep(1) # wait for it!
 print(joke_data['punchline'])
 ```
 
-**Advanced Example:** Download an image and save it to a file. Uses the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Image_types) from the response headers, telling us the type of content in the response, to add the right extension to the filename.
+**Advanced GET Example:** Download an image and save it to a file. Uses the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Image_types) from the response headers, telling us the type of content in the response, to add the right extension to the filename.
 
 ```python
 import requests
