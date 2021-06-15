@@ -199,18 +199,20 @@ Make HTTP requests on the internet.
 > https://docs.python-requests.org/en/master/user/quickstart/
 
 [HTTP messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages) are how web browsers communicate on the internet. You make a **request** to a server (or a computer) and it sends a **response** back.
-* The main parts of a **request** are: a url, a method, headers, and sometimes a body.
+* The main parts of a **request** are:
   * `url` - the address a request will go to.
   * `method` - the "verb" or type of request. We'll cover `GET` and `POST` requests.
   * `body` - (optional) data like a form or a file
-  * [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) are like settings. Most of the time, we're happy with the defaults, so just be aware of them.
-* The main parts of a response:
+  * [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) - (optional) like settings. Most of the time, we're happy with the defaults, so just be aware of them.
+* The main parts of a **response**:
   * actually, it looks a lot like a request, so...all those parts :smile:
-  * [status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - a code in the response to your request to let you know if it was successfully completed (e.g. `200 OK`).
+  * [status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - a code in the response to your request to let you know if it was successfully completed.
+    - `200 OK` the request succeeded
+    - `404 Not Found` the server can't find that. Do you have a typo in the `url`?
 
 ### POST
 
-An HTTP POST request asks a server to accept data you are sending it.. A web browser uses POST when you submit an online form.
+An HTTP POST request asks a server to accept data you are sending it. A web browser uses POST when you submit an online form.
 
 ```python
 import requests
