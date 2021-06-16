@@ -7,13 +7,60 @@ We link to relevant [Python Docs](https://docs.python.org/3.5/) for more detail:
 * [Built-in Functions](https://docs.python.org/3.5/library/functions.html) are always available
 * [Standard Library](https://docs.python.org/3.5/library/index.html)  a description of standard objects and modules
 
+**Table of Contents**
+* [Comments](#comments)
+* [Variables](#variables)
+* [Data Types](#data-types)
+  * [Numbers](#numbers)
+  * [Strings](#strings)
+  * [Booleans](#booleans)
+  * [Lists](#lists)
+  * [Tuples](#tuples)
+  * [Sets](#sets)
+  * [Dictionaries](#dictionaries)
+* [Statements](#statements)
+  * `if`
+  * `while`
+  * `for`
+* [Formatting Output](#formatting-output)
+* [Functions](#functions)
+* [Modules](#modules)
+  * The Standard Library
+  * Time
+  * Files
+
 ## Comments
 
-Comments start with a hash, `#`, and go to the end of the line. They explain code, but don't do anything.
+Comments start with a hash, `#`, and go to the end of the line. They explain code to people, but don't do anything.
 
 ```python
 # this is the first comment
 3 + 3 # and this is the second comment
+```
+
+## Variables
+
+A container for data. Stores a value and lets you give it a name.
+
+```python
+x = 1
+x = 'apple'
+x = [1, 2, 3]
+```
+
+Good variable names are important to clean, readable code. The computer doesn't care, but it helps if you can read your own writing.
+* They should be short and descriptive.
+* By convention,
+  * join words with an underscore (`car_color` not `carcolor`)
+  * start variables we don't care about with a `_`.
+
+## Data Types
+
+The kinds of containers Python has for holding data.
+
+```python
+cat_name = "Garfield" # the String data type
+number_of_lives = 9 # the Integer data type (a Number)
 ```
 
 ## Numbers
@@ -231,20 +278,6 @@ The body of statements is indented, which is Python's way of grouping code that 
   for item in list:
     print(item)
   ```
-
-## Variables
-
-Stores a value and lets you give it a name.
-
-```python
-x = 1
-x = 'apple'
-x = [1, 2, 3]
-```
-
-Good variable names are important to clean, readable code.
-They should be short and descriptive.
-* By convention, we use `_` for variables we don't care about.
 
 ## Formatting Output
 
