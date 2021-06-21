@@ -9,6 +9,7 @@ Contents
 * [Temperature Probe](#temperature-probe)
 * [Sense HAT](#sense-hat)
 * [Pi Camera](#pi-camera)
+* [Minecraft Pi](#minecraft-pi)
 * [(Internet) Requests](#internet-requests)
 
 **Need to Install First**
@@ -118,7 +119,9 @@ automationhat.output.one.off() # ...and off
 
 Setup
 * `sudo pip3 install w1thermsensor` (see [installation](https://github.com/timofurrer/w1thermsensor#installation))
-* Go to Raspberry Pi preferences > Interface. Enable 1-wire. Reboot.
+* Go to Raspberry Pi menu > Preferences > Raspberry Pi Configuration > Interface.
+  - Enable 1-wire
+  - Reboot
 
 ```python
 from w1thermsensor import W1ThermSensor
@@ -209,6 +212,22 @@ camera.wait_recording(5)
 
 camera.stop_recording()
 camera.stop_preview()
+```
+
+## Minecraft Pi
+
+The [mcpi](https://github.com/martinohanlon/mcpi) module allows you to communicate with [Minecraft: Pi edition](https://www.minecraft.net/en-us/edition/pi).
+* [Getting Started with Minecraft Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-minecraft-pi) Raspberry Pi Project
+* [mcpi API reference](https://www.stuffaboutcode.com/p/minecraft-api-reference.html)
+
+Install with `sudo pip3 install mcpi`
+
+```python
+from mcpi import minecraft
+
+mc = minecraft.Minecraft.create()
+
+mc.postToChat("Hello world")
 ```
 
 ## Internet Requests
